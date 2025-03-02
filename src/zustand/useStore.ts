@@ -12,7 +12,7 @@ type Action = {
   updateDemoString: (demoString: string) => void;
 };
 
-const useStore = create<Store & Action>((set) => ({
+const useUserStore = create<Store & Action>((set) => ({
   user: null,
   demoString: "demo",
   logIn: (user) => set({ user }),
@@ -20,4 +20,4 @@ const useStore = create<Store & Action>((set) => ({
   updateDemoString: (demoString) => set({ demoString }),
 }));
 
-export default useStore;
+export default useUserStore;
