@@ -1,5 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { User } from "../type";
+import { useSelector } from "react-redux";
 import { TypedUseSelectorHook, useDispatch } from "react-redux";
 
 interface UserState {
@@ -40,6 +41,7 @@ const store = configureStore({
   },
 });
 
+export const { logIn, logOut, updateDemoString } = userSlice.actions;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
