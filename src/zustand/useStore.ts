@@ -1,3 +1,4 @@
+import { create } from "zustand";
 import { User } from "../type";
 
 type Store = {
@@ -16,6 +17,7 @@ const useStore = create<Store & Action>((set) => ({
   demoString: "demo",
   logIn: (user) => set({ user }),
   logOut: () => set({ user: null }),
+  updateDemoString: (demoString) => set({ demoString }),
 }));
 
 export default useStore;
