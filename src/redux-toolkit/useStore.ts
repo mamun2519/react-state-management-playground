@@ -1,3 +1,4 @@
+import { createSlice } from "@reduxjs/toolkit";
 import { User } from "../type";
 
 interface UserState {
@@ -15,3 +16,16 @@ const initialState: UserState = {
   user: null,
   demoString: "demo",
 };
+
+const userSlice = createSlice({
+  name: "user",
+  initialState,
+  reducers: {
+    logIn: (state, action) => {
+      state.user = action.payload;
+    },
+    logOut: (state) => {
+      state.user = null;
+    },
+  },
+});
