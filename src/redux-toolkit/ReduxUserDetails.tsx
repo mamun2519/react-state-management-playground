@@ -1,5 +1,11 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "./useStore";
+import {
+  logIn,
+  logOut,
+  updateDemoString,
+  useAppDispatch,
+  useAppSelector,
+} from "./useStore";
 
 const ReduxUserDetails = () => {
   const user = useAppSelector((state) => state.user.user);
@@ -12,7 +18,20 @@ const ReduxUserDetails = () => {
     const user = await response.json();
     dispatch(logIn(user));
   };
-  return <div></div>;
+  return (
+    <div>
+      <h1>User Details</h1>
+      <p>Name: {user?.name}</p>
+      <p>Email: {user?.email}</p>
+      <p>Phone: {user?.phone}</p>
+      <p>Role: {user?.role}</p>
+      <button onClick={() => handleLogin("1")}>Log In</button>
+      <button onClick={() => dispatch(logOut())}>Log Out</button>
+      <button onClick={() => dispatch(updateDemoString("Hello world"))}>
+        Update Demo Text
+      </button>
+    </div>
+  );
 };
 
 export default ReduxUserDetails;
