@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       {/* Zustand */}
-      <ZustandUserDetails />
-      <ZustandDemoString />
+      {/* <ZustandUserDetails />
+      <ZustandDemoString /> */}
 
       {/* Redux */}
       <ReduxWrapper>
